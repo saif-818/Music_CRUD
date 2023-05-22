@@ -1,0 +1,20 @@
+
+<%if(music!=null){%>
+    <table border="1px">
+      <tr>
+          <th>Songname </th>
+          <th>Film </th>
+          <th>Music_director </th>
+          <th>singer </th>
+      </tr>
+      <%music.forEach((item) => {%>
+          <tr>
+              <td><%= item.Songname%></td>
+              <td><%= item.Film %></td>
+              <td><%= item.Music_director%></td>
+              <td><%= item.singer %></td>
+          </tr>
+      <%})%>
+      
+    </table>
+<%}%>

@@ -1,0 +1,35 @@
+<style>
+    tr th {
+        padding: 4px;
+    }
+</style>
+
+<% if(count!=null){%>
+    <h1>Count = <%=count%> </h1>
+<%}%>
+
+<%if(music!=null){%>
+      <table border="1px">
+        <tr>
+            <th>Songname</th>
+            <th>Film </th>
+            <th>Music_director </th>
+            <th>singer </th>
+            <th>Delete Song</th>
+        </tr>
+        <%music.forEach((item) => {%>
+            <tr>
+                <td><%= item.SongName%></td>
+                <td><%= item.Film %></td>
+                <td><%= item.Music_director%></td>
+                <td><%= item.singer %></td>
+                <td>
+                    <form action="/deleteSongs/<%=item._id %>" method="post">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <%})%>
+        
+      </table>
+<%}%>
